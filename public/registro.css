@@ -1,0 +1,56 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: url('img/fondo.jpg') no-repeat center center/cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .registro-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+      width: 350px;
+    }
+
+    .registro-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #c0392b;
+    }
+
+    .registro-container label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .registro-container input, 
+    .registro-container select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #150b0b;
+      border-radius: 8px;
+    }
+
+    .registro-container button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #c0392b;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .registro-container button:hover {
+      background-color: #e74c3c;
+    }

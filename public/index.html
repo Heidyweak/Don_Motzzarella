@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+<title>Don Motzzarella</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <link rel="icon" type="" href="img/logo.png" sizes="128x128">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+    <header>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-left">
+     <a href="index.html">
+   <img src="img/logo.png" alt="logo">
+</a>
+
+    <span id="userDisplay" class="user-display"></span>
+  </div>
+  <div class="nav-right">
+        <a href="#producto">PRODUCTOS</a>
+        <a href="#res">RESEÑA</a>
+                <a href="#encuentranos">UBICANOS</a>
+                <a href="#contacto">CONTACTO</a>
+  </div>
+</nav>
+
+
+<!-- Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <!-- Formulario de Login -->
+    <div id="loginForm">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginFormElement">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+
+        <input type="submit" value="Entrar">
+      </form>
+      <div class="extra-buttons">
+        <button id="registerBtn" type="button">No tienes cuenta? Regístrate</button>
+        <button id="deliveryBtn" type="button">Iniciar sesión como repartidor</button>
+      </div>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div id="registerForm" style="display:none;">
+      <h2>Registrarse</h2>
+      <form id="registerFormElement">
+        <label for="newUsername">Usuario:</label>
+        <input type="text" id="newUsername" name="newUsername" placeholder="Ingresa tu usuario" required>
+
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+
+        <label for="newPassword">Contraseña:</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Crea una contraseña" required>
+
+        <input type="submit" value="Registrarse">
+      </form>
+      <div class="extra-buttons">
+        <button id="backToLogin1" type="button">Volver al inicio de sesión</button>
+      </div>
+    </div>
+
+    <!-- Formulario de Repartidor -->
+    <div id="deliveryForm" style="display:none;">
+      <h2>Iniciar Sesión como Repartidor</h2>
+      <form id="deliveryFormElement">
+        <label for="deliveryUser">Usuario:</label>
+        <input type="text" id="deliveryUser" name="deliveryUser" placeholder="Ingresa tu usuario" required>
+
+        <label for="deliveryPassword">Contraseña:</label>
+        <input type="password" id="deliveryPassword" name="deliveryPassword" placeholder="Ingresa tu contraseña" required>
+
+        <label for="vehicle">Tipo de vehículo:</label>
+        <input type="text" id="vehicle" name="vehicle" placeholder="Moto, bici, carro..." required>
+
+        <input type="submit" value="Entrar como repartidor">
+      </form>
+      <div class="extra-buttons">
+        <button id="backToLogin2" type="button">Volver al inicio de sesión</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+      
+          <div class="texto">
+            <h1>Bienvenidos a Don Motzarella.<br><strong>_________</strong></h1>
+            <p>En Don Mozzarella te invitamos a disfrutar del auténtico sabor italiano sin complicaciones.
+            Nuestra pizzería es un lugar donde la familia y los amigos se sienten como en casa, con recetas tradicionales elaboradas con ingredientes frescos y de
+            calidad. Desde nuestras clásicas pizzas hasta opciones innovadoras, cada bocado está hecho con amor y pasión por la cocina italiana. Todo esto, a
+            precios que no romperán tu bolsillo. ¡Ven y descubre tu nueva pizza favorita en un ambiente cálido y acogedor! </p>
+            
+        </div>
+    </header>
+  
+    <section class="banner" id="producto">
+        <h2>NUESTROS PRODUCTOS</h2>
+        <div class="slider">
+            <div class="slide-bann">
+                <!-- las imagenes-->
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p1.jpg" alt="aa">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p2.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p3.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p6.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p4.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p5.jpg" alt="">
+                </a>
+               
+                <!-- las duplicamos-->
+                 <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p1.jpg" alt="aa">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p2.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p3.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p6.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p4.jpg" alt="">
+                </a>
+                <a class="slide" href="tienda.html" target="_blank">
+                    <img src="img\p5.jpg" alt="">
+                </a>
+               
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+    <section class="reviews-section" id="res">
+      <h1>Danos tu opinión</h1>
+      <p class="subtitle">¿Te gustó nuestra pizza? Déjanos una reseña y califícanos ⭐</p>
+
+      <!-- Formulario de reseña -->
+      <form id="reviewForm" class="review-form" aria-label="Formulario de reseña">
+        <div class="field">
+          <label for="name">Nombre (opcional)</label>
+          <input id="name" name="name" type="text" placeholder="Tu nombre" maxlength="40">
+        </div>
+
+        <fieldset class="field rating" aria-label="Valoración">
+          <legend>Valoración</legend>
+
+          <!-- Sistema de estrellas (radio buttons) -->
+          <div class="stars" role="radiogroup" aria-labelledby="ratingLabel">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 estrellas">★</label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 estrellas">★</label>
+
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 estrellas">★</label>
+
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 estrellas">★</label>
+
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 estrella">★</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="comment">Tu reseña</label>
+          <textarea id="comment" name="comment" rows="4" placeholder="Cuéntanos qué te gustó (o qué no)..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Enviar reseña</button>
+          <button type="button" id="clearBtn" class="btn alt">Limpiar</button>
+        </div>
+
+        <p id="formMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+
+      <!-- Lista de reseñas enviadas -->
+      <section id="reviewsList" class="reviews-list" aria-live="polite" aria-label="Reseñas de clientes">
+        <h2>Reseñas recientes</h2>
+        <div id="reviewsContainer" class="reviews-container">
+          <!-- Reseñas se insertan aquí -->
+        </div>
+      </section>
+    </section>
+  </main>
+    <section class="video-mapa" id="encuentranos">
+        <div class="video">
+            <h2>INGRESA A NUESTRAS INSTALACIONES</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_oCEddEGiXM " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="mapa">
+            <h2>ENCUENTRANOS AQUI</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3459321570053!2d-77.0482531!3d-12.088453699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c85651ca437f%3A0x116fe5862c1b846a!2sPizzer%C3%ADa%20La%20Romana!5e0!3m2!1ses!2ses!4v1758396687169!5m2!1ses!2ses"  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+      <section class="marco-programadores">
+        <h2>¡Conoce al equipo que hizo esto posible!</h2>
+        <div class="cards-container">
+            <div class="profile-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/perfil.png" alt="Diego Ecenarro">
+                        <h3>Diego Ecenarro</h3>
+                        <p>Propietario</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Contáctame</h3>
+                        <div class="social-links">                            
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="Portfolio"><i class="fas fa-globe"></i></a>
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="bio">La pizza es nuestra pasión, pero compartirla contigo es nuestra verdadera felicidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/perfil.png" alt="Heidy Cruz">
+                        <h3>Heidy Cruz</h3>
+                        <p>Propietaria</p>
+                    </div>
+         <div class="card-back">
+                        <h3>Contáctame</h3>
+                        <div class="social-links">                            
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="Portfolio"><i class="fas fa-globe"></i></a>
+                            <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="bio">Aquí no solo servimos comida, servimos momentos que se convierten en recuerdos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/perfil.png" alt="Renzo Paredes">
+                        <h3>Renzo Paredes</h3>
+                        <p>Propietario</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Contáctame</h3>
+                        <div class="social-links">                            
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="Portfolio"><i class="fas fa-globe"></i></a>
+                            <a href="http://wa.link/lukupn" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="bio">Esta pizzería nació de un sueño, y cada día trabajamos para que tú seas parte de él.</p>
+                    </div>
+  </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Footer moderno -->
+    <footer>
+        <div class="footer-content">
+            <div id="contacto" class="footer-section">
+                <h3>Sobre Nosotros</h3>
+       <p>En la Pizzeria Don Motzzarella creemos que una buena pizza va más allá de los ingredientes: es un momento para compartir, disfrutar y sonreír.
+                Nacimos con la idea de traer el auténtico sabor italiano a nuestra comunidad, combinando recetas tradicionales con un toque especial que nos hace únicos.</p>            </div>
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Example 123, Lima</p>
+                <p><i class="fas fa-phone"></i> (01) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> contacto@donmotzza.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" title="Síguenos en Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" title="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/1234567890" target="_blank" title="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025  Don Motzarella | Todos los derechos reservados</p>
+        </div>
+    </footer>    
+<script src="dm.js"></script> 
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+name: CI github actions
+on:
+    push:
+        branches: [master]
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Descargando repositorio
+              uses: actions/checkout@v4
+            - name: Listando archivos
+              run: ls -lha
+            - name: Configurando credenciales AWS
+              uses: aws-actions/configure-aws-credentials@v5.0.0
+              with:
+                aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                aws-region: us-east-2
+            - name: Listar buckets
+              run: aws s3 ls
+            - name: Sync to s3
+              run: aws S3 Sync ./Don-Motzzarella s3://pizzeriadm 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzería Don Motzarella</title>
+  <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+  <div class="registro-container">
+    <h2>Registro Pizzería Don Motzarella</h2>
+    <form>
+      <label for="nombres">Nombres</label>
+      <input type="text" id="nombres" name="nombres" required>
+
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" name="apellidos" required>
+
+      <label for="usuario">Nombre de Usuario</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="idusuario">ID de Usuario</label>
+      <input type="text" id="idusuario" name="idusuario" required>
+
+      <label for="documento">Tipo de Documento</label>
+      <select id="documento" name="documento" required>
+        <option value="">Seleccione</option>
+        <option value="dni">DNI</option>
+        <option value="carnet">Carnet de Extranjería</option>
+        <option value="pasaporte">Pasaporte</option>
+      </select>
+
+      <label for="numdoc">Número de Documento</label>
+      <input type="text" id="numdoc" name="numdoc" required>
+
+      <label for="telefono">Número de Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="edad">Edad</label>
+      <input type="number" id="edad" name="edad" required>
+
+      <label for="correo">Correo Electrónico</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmar">Confirmar Contraseña</label>
+      <input type="password" id="confirmar" name="confirmar" required>
+      
+      <form action="index.html" method="get">
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</body>
+</html>
