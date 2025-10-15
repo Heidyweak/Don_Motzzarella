@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nuestros Productos</title>
+  <link rel="icon" type="" href="img/logo.png" sizes="128x128">
+  <link rel="stylesheet" href="tienda.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-left">
+     <a href="index.html">
+   <img src="img/logo.png" alt="logo">
+</a>
+      <div>
+        <p class="lead">Elige tu pizza favorita</p>
+      </div>
+      <div>
+        <small style="color:var(--muted)">Tu Carrito</small>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section>
+        <div class="menu" id="menu"></div>
+      </section>
+
+      <aside class="cart" aria-labelledby="cart-title">
+        <h2 id="cart-title">Carrito</h2>
+        <div id="cartList" class="cart-list">
+          <div class="empty">Tu carrito está vacío.</div>
+        </div>
+        <div class="total">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <div class="buttons">
+          <button id="clearBtn" class="btn">Vaciar</button>
+          <button id="checkoutBtn" class="btn">Finalizar</button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // Datos de ejemplo de pizzas (con imágenes)
+    const pizzas = [
+      { id: 'margarita', name: 'Margarita', desc: 'Salsa de tomate, mozzarella y hojas de albahaca fresca', price: 6.5, img: 'img/margarita.jpg' },
+      { id: 'pepperoni', name: 'Pepperoni', desc: 'Mozzarella, salsa de tomate y rodajas de pepperoni crujiente', price: 8.0, img: 'img/peperoni.jpg' },
+      { id: 'vegetariana', name: 'Vegetariana', desc: 'Champiñones, pimientos, cebolla, aceitunas, espinacas y mozzarella', price: 7.5, img: 'img/vegetariana.jpg' },
+      { id: 'cuatro-quesos', name: 'Cuatro Quesos', desc: 'Mozzarella, gorgonzola, parmesano y fontina (o cheddar)', price: 9.0, img: 'img/4quesos.jpg' },
+      { id: 'napolitana', name: 'Napolitana', desc: 'Salsa de tomate, mozzarella, anchoas, aceitunas y orégano', price: 9.5, img: 'img/napolitana.jpg' },
+      { id: 'hawaiana', name: 'Hawaiana', desc: 'Jamón, piña, mozzarella y salsa de tomate', price: 8.5, img: 'img/hawaiana.png' }
+    ];
+
+    const cart = {};
+    const menuEl = document.getElementById('menu');
+    const cartListEl = document.getElementById('cartList');
+    const cartTotalEl = document.getElementById('cartTotal');
+
+    function formatPrice(n){return '$' + n.toFixed(2)}
+
+    function renderMenu(){
+      menuEl.innerHTML = '';
+      pizzas.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'pizza';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.name}" class="pizza-img">
+          <div class="pizza-info">
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+            <div class="price-row">
+              <strong>${formatPrice(p.price)}</strong>
+              <button class="btn" data-id="${p.id}">Agregar</button>
+            </div>
+          </div>
+        `;
+        menuEl.appendChild(card);
+      });
+
+      menuEl.querySelectorAll('button[data-id]').forEach(b => b.addEventListener('click', e => {
+        const id = e.currentTarget.dataset.id; addToCart(id);
+      }));
+    }
+
+    function addToCart(id){
+      const pizza = pizzas.find(p=>p.id===id);
+      if(!pizza) return;
+      if(!cart[id]) cart[id] = {pizza, qty:0};
+      cart[id].qty += 1;
+      renderCart();
+    }
+
+    function changeQty(id, delta){
+      if(!cart[id]) return;
+      cart[id].qty += delta;
+      if(cart[id].qty <= 0) delete cart[id];
+      renderCart();
+    }
+
+    function renderCart(){
+      cartListEl.innerHTML = '';
+      const keys = Object.keys(cart);
+      if(keys.length === 0){ cartListEl.innerHTML = '<div class="empty">Tu carrito está vacío.</div>'; cartTotalEl.textContent = formatPrice(0); return }
+      let total = 0;
+      keys.forEach(key => {
+        const item = cart[key];
+        const row = document.createElement('div'); row.className='cart-item';
+        const name = document.createElement('div'); name.className='name'; name.innerHTML = `<strong>${item.pizza.name}</strong><div>${formatPrice(item.pizza.price)}</div>`;
+        const qty = document.createElement('div'); qty.className='qty';
+        qty.innerHTML = `<button data-id="${key}" data-op="-">-</button><span>${item.qty}</span><button data-id="${key}" data-op="+">+</button>`;
+        const sub = document.createElement('div'); sub.textContent = formatPrice(item.pizza.price * item.qty);
+        row.append(name, qty, sub);
+        cartListEl.append(row);
+      });
+
+      cartListEl.querySelectorAll('button[data-op]').forEach(b=>b.addEventListener('click', e=>{
+        const id = e.currentTarget.dataset.id; const op = e.currentTarget.dataset.op;
+        changeQty(id, op === '+' ? 1 : -1);
+      }));
+
+      total = keys.reduce((s,k)=> s + cart[k].pizza.price * cart[k].qty, 0);
+      cartTotalEl.textContent = formatPrice(total);
+    }
+
+    document.getElementById('clearBtn').addEventListener('click', ()=>{ for(const k in cart) delete cart[k]; renderCart(); });
+
+    document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+      if(Object.keys(cart).length===0){ alert('Tu carrito está vacío.'); return }
+      alert('Gracias por tu compra!');
+    });
+
+    renderMenu();
+    renderCart();
+  </script>
+</body>
+</html>
