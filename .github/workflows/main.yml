@@ -20,4 +20,4 @@ jobs:
             - name: Listar buckets
               run: aws s3 ls
             - name: Sync to s3
-              run: aws S3 Sync ./Don-Motzzarella s3://pizzeriadm
+              run: aws S3 Sync ./Don_Motzzarella s3://pizzeriadm
