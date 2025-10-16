@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # 1. SERVICIO DE BACKEND (Tu aplicación Node.js)
+  backend:
+    # --- CAMBIO CLAVE AQUÍ ---
+    # Le indica a Docker que construya la imagen con el Dockerfile que tienes en el directorio actual
+    build: . 
+    # -------------------------
+
+    # Mapea el puerto 8000 del host al puerto 3000 que expone tu server.js
+    ports:
+      - "8000:3000" 
+      
+    # Dependencia: Asegura que el servicio 'db' (Mongo) se inicie primero
+    depends_on:
+      - db
+      
+    # ¡CRUCIAL! Define la URL de conexión a la base de datos
+    environment:
+      # 'db' es el nombre del servicio de Mongo en la red de Docker Compose
+      MONGO_URI: mongodb://db:27017/Don_Motzzarella
+
+  # ---
+  
+  # 2. SERVICIO DE BASE DE DATOS (MongoDB)
+  db:
+    # Utiliza la imagen oficial de MongoDB
+    image: mongo:latest
+    
+    # Persistencia de datos: Guarda los datos en un volumen para que no se pierdan
+    volumes:
+      - mongo-data:/data/db
+      
+    # (Opcional) Mapeo de puerto para poder conectar herramientas externas (como Compass)
+    ports:
+      - "27017:27017"
+
+# Define el volumen persistente fuera de los servicios
+volumes:
+  mongo-data:
